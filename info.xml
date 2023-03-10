@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<extension key="recur_future_amounts" type="module">
+  <file>recur_future_amounts</file>
+  <name>Recurring future amounds</name>
+  <description>This extensions adds a behaviour where the recurring contribution record changes if any contribution is created or edited against it with a different amount. It is useful if your payment processor does not manage amount updates for itself</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>Eileen</author>
+    <email>FIXME</email>
+  </maintainer>
+  <urls>
+    <url desc="Main Extension Page">http://FIXME</url>
+    <url desc="Documentation">http://FIXME</url>
+    <url desc="Support">http://FIXME</url>
+    <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
+  </urls>
+  <releaseDate>2023-03-10</releaseDate>
+  <version>1.0</version>
+  <develStage>stable</develStage>
+  <compatibility>
+    <ver>5.61</ver>
+  </compatibility>
+  <comments>This module is useful if your site needs to adjust recurring contributions to reflect new contributions coming in</comments>
+  <classloader>
+    <psr0 prefix="CRM_" path="."/>
+    <psr4 prefix="Civi\" path="Civi"/>
+  </classloader>
+  <civix>
+    <namespace>CRM/RecurFutureAmounts</namespace>
+    <format>23.02.0</format>
+    <angularModule>crmRecurFutureAmounts</angularModule>
+  </civix>
+  <mixins>
+    <mixin>mgd-php@1.0.0</mixin>
+    <mixin>setting-php@1.0.0</mixin>
+    <mixin>smarty-v2@1.0.0</mixin>
+  </mixins>
+</extension>
