@@ -1,54 +1,18 @@
-# recur_future_amounts
+# Recur Future Amounts extension
 
-![Screenshot](/images/screenshot.png)
+This extension ensures that the RecurringContribution
+record is updated whenever an attached Contribution has
+is created or updated with a different amount.
 
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+It does not apply to TemplateContributions as core handles
+that. However, since not all sites / payment processors
+wish to update the intent of future contributions when
+a contribution is added / edited that has been made optional
+by moving it out of core.
 
-The extension is licensed under [AGPL-3.0](LICENSE.txt).
-
-## Requirements
-
-* PHP v7.4+
-* CiviCRM (*FIXME: Version number*)
-
-## Installation (Web UI)
-
-Learn more about installing CiviCRM extensions in the [CiviCRM Sysadmin Guide](https://docs.civicrm.org/sysadmin/en/latest/customize/extensions/).
-
-## Installation (CLI, Zip)
-
-Sysadmins and developers may download the `.zip` file for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-cd <extension-dir>
-cv dl recur_future_amounts@https://github.com/FIXME/recur_future_amounts/archive/master.zip
-```
-or
-```bash
-cd <extension-dir>
-cv dl recur_future_amounts@https://lab.civicrm.org/extensions/recur_future_amounts/-/archive/main/recur_future_amounts-main.zip
-```
-
-## Installation (CLI, Git)
-
-Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) repo for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-git clone https://github.com/FIXME/recur_future_amounts.git
-cv en recur_future_amounts
-```
-or
-```bash
-git clone https://lab.civicrm.org/extensions/recur_future_amounts.git
-cv en recur_future_amounts
-```
-
-## Getting Started
-
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
-
-## Known Issues
-
-(* FIXME *)
+When would this be relevant?
+- most sites will not need or want this extension.
+- generally you would want this if you are using a payment
+processor that does not update the `ContributionRecur` record
+when a payment comes in even though that payment signals that
+the contract has changed.
